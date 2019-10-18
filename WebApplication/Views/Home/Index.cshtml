@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lista Usuarios</h1>
+</div>
+<table class="table">
+    <tr>
+        <th>E-mail</th>
+        <th>Senha</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayTextFor(modelItem => item.user_email)
+            </td><td>
+                @Html.DisplayTextFor(modelItem => item.user_senha)
+            </td>
+        </tr>
+    }
+</table>

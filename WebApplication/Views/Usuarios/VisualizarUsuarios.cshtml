@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication.Models.cadastro>
+
+@{
+    ViewData["Title"] = "VisualizarUsuarios";
+}
+
+<h1>VisualizarUsuarios</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.user_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.user_senha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_senha)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
